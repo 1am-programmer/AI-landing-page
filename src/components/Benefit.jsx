@@ -2,6 +2,7 @@ import React from "react";
 import Section from "./Section";
 import Heading from "./Heading";
 import Arrow from "../assets/svg/Arrow";
+import ClipPath from "../assets/svg/ClipPath";
 import { GradientLight } from "./design/Benefits";
 import { benefits } from "../constants";
 
@@ -24,7 +25,7 @@ const Benefit = () => {
               }}
             >
               <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem]  pointer-events-none">
-                <h5 className="h2 mb-5">{benefit.title}</h5>
+                <h5 className="h5 mb-5">{benefit.title}</h5>
                 <p className="body-2 mb-6 text-n-3">{benefit.text}</p>
                 <div className="flex   items-center mt-auto">
                   <img
@@ -42,7 +43,25 @@ const Benefit = () => {
 
               {benefit.light && <GradientLight />}
 
-              <div></div>
+              <div
+                className="absolute inset-0.5 bg-n-8 "
+                style={{
+                  clipPath: "url(#benefits)",
+                }}
+              >
+                <div className="  absolute inset-0 opacity-0  transition-opacity hover:opacity-10">
+                  {benefit.imageUrl && (
+                    <img
+                      src={benefit.imageUrl}
+                      width={380}
+                      height={362}
+                      alt={benefit.title}
+                      className="w-full h-full  object-cover "
+                    />
+                  )}
+                </div>
+              </div>
+              <ClipPath />
             </div>
           ))}
         </div>
