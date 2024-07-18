@@ -2,6 +2,7 @@ import React from "react";
 import Section from "./Section";
 import Heading from "./Heading";
 import Arrow from "../assets/svg/Arrow";
+import { GradientLight } from "./design/Benefits";
 import { benefits } from "../constants";
 
 const Benefit = () => {
@@ -25,17 +26,23 @@ const Benefit = () => {
               <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem]  pointer-events-none">
                 <h5 className="h2 mb-5">{benefit.title}</h5>
                 <p className="body-2 mb-6 text-n-3">{benefit.text}</p>
-                <div className="flex  gap-3 items-center mt-auto">
+                <div className="flex   items-center mt-auto">
                   <img
                     src={benefit.iconUrl}
                     width={48}
                     height={48}
                     alt={benefit.title}
                   />
-                  <p>Explore More</p>
+                  <p className="ml-auto font-code font-bold text-xs text-n-1 tracking-wider uppercase">
+                    Explore More
+                  </p>
                   <Arrow />
                 </div>
               </div>
+
+              {benefit.light && <GradientLight />}
+
+              <div></div>
             </div>
           ))}
         </div>
