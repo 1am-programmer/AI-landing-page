@@ -1,6 +1,7 @@
 import React from "react";
 import Section from "./Section";
 import Heading from "./Heading";
+import { LeftLine, RightLine } from "./design/Pricing";
 
 import { smallSphere, stars } from "../assets";
 import PricingList from "./PricingList";
@@ -36,6 +37,8 @@ const Pricing = () => {
 
         <div className="relative">
           <PricingList />
+          <LeftLine />
+          <RightLine />
         </div>
       </div>
     </Section>
